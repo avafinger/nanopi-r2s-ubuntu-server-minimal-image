@@ -4,6 +4,8 @@ Ubuntu 19.10 Server for NanoPi R2S
 
 This is the base Image for a small router, based on Kernel 5.4.25 and up for the NanoPi R2S
 
+![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
+
 * Interfaces
 
       eth0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
