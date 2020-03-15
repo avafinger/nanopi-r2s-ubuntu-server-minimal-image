@@ -44,6 +44,18 @@ This is the base Image for a small router, based on Kernel 5.4.25 and up for the
 * eth1 (ok)
 * DVFS (seems ok)
 
+# Cpu / Kernel Health
+
+Checking the board health (manually)
+
+      cat /sys/devices/virtual/thermal/thermal_zone0/temp
+      38181
+      cat /sys/devices/system/cpu/cpufreq/policy0/cpuinfo_cur_freq 
+      408000
+      cat /sys/devices/platform/ff160000.i2c/i2c-1/1-0018/regulator/regulator.8/microvolts 
+      950000
+
+
 # ChangeLog
 
 * add Kernel 5.4.25 (initial commit)
