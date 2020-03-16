@@ -41,6 +41,12 @@ This is the base Image for a small router, based on Kernel 5.4.25 and up for the
               TX packets 54  bytes 4832 (4.8 KB)
               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
+# Releases
+
+* v0.1 - Ubuntu 19.10 Server NanoPi R2S
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.1
+
 
 # Status
 
