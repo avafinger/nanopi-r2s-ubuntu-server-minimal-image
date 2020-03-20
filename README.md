@@ -48,6 +48,16 @@ This is the base Image for a small router, based on Kernel 5.4.25 and up for the
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.1
 
 
+* v0.2 - Mini Router NanoPi R2S
+
+The "perfect" mini router with Ubuntu 19.10 for the NanoPi R2S. This mini router will isolate your local network from outside (internet / web).
+
+**Mini router configuration**
+
+![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/router.png)
+
+
+
 # Status
 
 * eth0 (ok)
@@ -69,6 +79,7 @@ Checking the board health (manually)
 # ChangeLog
 
 * add Kernel 5.4.25 (initial commit)
+* add support for rtl8821cu usb (v0.2)
 
 # BootLog
 
