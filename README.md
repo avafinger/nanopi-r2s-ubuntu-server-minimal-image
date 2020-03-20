@@ -56,6 +56,26 @@ The "perfect" mini router with Ubuntu 19.10 for the NanoPi R2S. This mini router
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/router.png)
 
+**rtl8821cu usb wlan**
+
+rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
+
+      [48272.791672] usb 2-1: new high-speed USB device number 2 using ehci-platform
+      [48272.822407] usb 2-1: New USB device found, idVendor=0bda, idProduct=8176, bcdDevice= 2.00
+      [48272.822436] usb 2-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+      [48272.822461] usb 2-1: Product: 802.11n WLAN Adapter
+      [48272.822477] usb 2-1: Manufacturer: Realtek
+      [48272.822492] usb 2-1: SerialNumber: 00e04c000001
+      [48273.267456] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+      [48273.290433] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+      [48274.431150] rtl8192cu: Chip version 0x10
+      [48274.532280] rtl8192cu: Board Type 0
+      [48274.532601] rtl_usb: rx_max_size 15360, rx_urb_num 8, in_ep 1
+      [48274.532781] rtl8192cu: Loading firmware rtlwifi/rtl8192cufw_TMSC.bin
+      [48274.534434] ieee80211 phy0: Selected rate control algorithm 'rtl_rc'
+      [48274.537632] usbcore: registered new interface driver rtl8192cu
+      [48274.625790] usbcore: registered new interface driver rtl8xxxu
+      [48274.654369] rtl8192cu 2-1:1.0 wlx7cdd902fdefa: renamed from wlan0
 
 
 # Status
