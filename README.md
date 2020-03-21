@@ -136,8 +136,8 @@ You can configure your WAN interface as a DHCP, fixed IP or according to your se
       
       sudo jed /etc/network/interfaces
       
-
-
+ 
+ 
       
       # interfaces(5) file used by ifup(8) and ifdown(8)
       auto lo
@@ -169,6 +169,13 @@ You can configure your WAN interface as a DHCP, fixed IP or according to your se
       # Disable power saving on compatible chipsets (prevents SSH/connection dropouts over WiFi)
       #wireless-mode Managed
       #wireless-power off
+
+**Client connection (DHCP)**
+
+A Linux desktop connected to the LAN interface of our mini router to surf the internet.
+
+![File manager](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/client-1.png)
+
 
 # Latest Kernel
 
