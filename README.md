@@ -90,6 +90,85 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
       sch_fq_codel           20480  3
       ip_tables              32768  0
       x_tables               40960  1 ip_tables
+           
+**filemanager-http**
+
+If you are not concerned about security you could run a file manager using a web browser, and configure **nanopi-r2s** as a gateway.
+
+just run :
+
+    ubuntu@nanopi-r2s:~$ sudo /usr/local/bin/filemanager-httpd
+
+![File manager](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/file-manager.png)
+
+      ubuntu@nanopi-r2s:~$ ifconfig
+      eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+              inet 192.168.254.21  netmask 255.255.0.0  broadcast 192.168.255.255
+              inet6 fe80::285e:77ff:fe5a:8f4f  prefixlen 64  scopeid 0x20<link>
+              inet6 2804:7f4:358b:2710:285e:77ff:fe5a:8f4f  prefixlen 64  scopeid 0x0<global>
+              ether 2a:5e:77:5a:8f:4f  txqueuelen 1000  (Ethernet)
+              RX packets 8636  bytes 11687238 (11.6 MB)
+              RX errors 0  dropped 0  overruns 0  frame 0
+              TX packets 5043  bytes 508024 (508.0 KB)
+              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+              device interrupt 28  
+
+      eth1: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+              inet 192.168.1.1  netmask 255.255.255.0  broadcast 255.255.1.255
+              ether 3e:1b:ee:4b:8e:11  txqueuelen 1000  (Ethernet)
+              RX packets 0  bytes 0 (0.0 B)
+              RX errors 0  dropped 0  overruns 0  frame 0
+              TX packets 0  bytes 0 (0.0 B)
+              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+      lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+              inet 127.0.0.1  netmask 255.0.0.0
+              inet6 ::1  prefixlen 128  scopeid 0x10<host>
+              loop  txqueuelen 1000  (Local Loopback)
+              RX packets 0  bytes 0 (0.0 B)
+              RX errors 0  dropped 0  overruns 0  frame 0
+              TX packets 0  bytes 0 (0.0 B)
+              TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+**Configuring WAN (eth0)**
+
+You can configure your WAN interface as a DHCP, fixed IP or according to your service provider. Edit the file /etc/network/interfaces and change the eth0 configuration as desired, in my case i have DHCP (default):
+      
+      sudo jed /etc/network/interfaces
+      
+
+
+      
+      # interfaces(5) file used by ifup(8) and ifdown(8)
+      auto lo
+      iface lo inet loopback
+
+      auto eth0
+      #allow-hotplug eth0
+      iface eth0 inet dhcp
+
+      #allow-hotplug eth1
+      #iface eth1 inet dhcp
+      auto eth1
+      iface eth1 inet static
+      address 192.168.1.1
+      netmask 255.255.255.0
+      broadcast 255.255.1.255    
+      #gateway 192.168.1.1
+      dns-nameservers 8.8.8.8 8.8.4.4
+
+      #allow-hotplug wlan0
+      #iface wlan0 inet dhcp
+      #	wpa-ssid "foxy"
+      #	wpa-psk "1234567890"
+      #address 192.168.254.55
+      #netmask 255.255.0.0
+      #gateway 192.168.254.254
+      #dns-nameservers 8.8.8.8 8.8.4.4
+      ####wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+      # Disable power saving on compatible chipsets (prevents SSH/connection dropouts over WiFi)
+      #wireless-mode Managed
+      #wireless-power off
 
 # Latest Kernel
 
