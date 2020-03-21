@@ -78,6 +78,23 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
       [48274.654369] rtl8192cu 2-1:1.0 wlx7cdd902fdefa: renamed from wlan0
 
 
+      Module                  Size  Used by
+      8821cu               2035712  0
+      cfg80211              708608  1 8821cu
+      zram                   40960  4
+      zsmalloc               28672  1 zram
+      r8152                  77824  0
+      crct10dif_ce           16384  1
+      uio_pdrv_genirq        16384  0
+      uio                    24576  1 uio_pdrv_genirq
+      sch_fq_codel           20480  3
+      ip_tables              32768  0
+      x_tables               40960  1 ip_tables
+
+# Latest Kernel
+
+Linux nanopi-r2s 5.4.27 #1 SMP PREEMPT Sat Mar 21 12:59:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+
 # Status
 
 * eth0 (ok)
@@ -100,6 +117,7 @@ Checking the board health (manually)
 
 * add Kernel 5.4.25 (initial commit)
 * add support for rtl8821cu usb (v0.2)
+* add Kernel 5.4.27 (v0.2)
 
 # BootLog
 
