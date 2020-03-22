@@ -52,7 +52,9 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 
 The "perfect" mini router with Ubuntu 19.10 for the NanoPi R2S. This mini router will isolate your local network from outside (internet / web).
 
-**Mini router configuration**
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.2
+
+**NanoPi R2S Mini router configuration**
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/router.png)
 
@@ -136,10 +138,11 @@ You can configure your WAN interface as a DHCP, fixed IP or according to your se
       
       sudo jed /etc/network/interfaces
       
- 
- 
       
-      # interfaces(5) file used by ifup(8) and ifdown(8)
+ 
+  
+       
+       # interfaces(5) file used by ifup(8) and ifdown(8)
       auto lo
       iface lo inet loopback
 
@@ -177,7 +180,7 @@ A Linux desktop connected to the LAN interface of our mini router to surf the in
 ![File manager](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/client-1.png)
 
 
-# Latest Kernel
+# Latest Kernel - NanoPi R2S mini router - Ubuntu 19.10
 
 Linux nanopi-r2s 5.4.27 #1 SMP PREEMPT Sat Mar 21 12:59:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 
@@ -204,6 +207,7 @@ Checking the board health (manually)
 * add Kernel 5.4.25 (initial commit)
 * add support for rtl8821cu usb (v0.2)
 * add Kernel 5.4.27 (v0.2)
+* add NanoPi R2S mini router (v0.2)
 
 # BootLog
 
