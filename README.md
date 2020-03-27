@@ -78,8 +78,10 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
       [48274.537632] usbcore: registered new interface driver rtl8192cu
       [48274.625790] usbcore: registered new interface driver rtl8xxxu
       [48274.654369] rtl8192cu 2-1:1.0 wlx7cdd902fdefa: renamed from wlan0
-
-
+      
+ 
+  
+      
       Module                  Size  Used by
       8821cu               2035712  0
       cfg80211              708608  1 8821cu
@@ -136,11 +138,10 @@ just run :
 
 You can configure your WAN interface as a DHCP, fixed IP or according to your service provider. Edit the file /etc/network/interfaces and change the eth0 configuration as desired, in my case i have DHCP (default):
       
-      sudo jed /etc/network/interfaces
-      
+      sudo jed /etc/network/interfaces      
       
  
-  
+ 
        
        # interfaces(5) file used by ifup(8) and ifdown(8)
       auto lo
@@ -200,6 +201,32 @@ Checking the board health (manually)
       408000
       cat /sys/devices/platform/ff160000.i2c/i2c-1/1-0018/regulator/regulator.8/microvolts 
       950000
+
+
+# Interface monitoring
+
+Kernel has support for leds so we can control the available leds on the board.
+
+    sudo su
+    cd /sys/class/leds/
+    oot@nanopi-r2s:/sys/class/leds# ls
+    lan_led  status_led  wan_led
+
+
+The available options are:
+
+      [none] rc-feedback rfkill-any rfkill-none kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock mmc0 timer oneshot heartbeat gpio cpu cpu0 cpu1 cpu2 cpu3 default-on panic 
+
+
+To turn on the wan_led
+
+    echo "default-on" > /sys/class/leds/wan_led/trigger 
+
+To turn off the wan_led
+
+    echo "none" > /sys/class/leds/wan_led/trigger 
+    
+We can now move on and install a service to show the status of our WAN and LAN interfaces turning the wan_led and lan_led ON and OFF.
 
 
 # ChangeLog
