@@ -91,8 +91,14 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
 * Modules
       
       Module                  Size  Used by
-      8821cu               2035712  0
-      cfg80211              708608  1 8821cu
+      iptable_nat            16384  1
+      xt_MASQUERADE          20480  1
+      nf_nat                 65536  2 iptable_nat,xt_MASQUERADE
+      xt_conntrack           16384  2
+      nf_conntrack          151552  3 xt_conntrack,nf_nat,xt_MASQUERADE
+      nf_defrag_ipv6         24576  1 nf_conntrack
+      nf_defrag_ipv4         16384  1 nf_conntrack
+      iptable_filter         16384  1
       zram                   40960  4
       zsmalloc               28672  1 zram
       r8152                  77824  0
@@ -100,8 +106,8 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
       uio_pdrv_genirq        16384  0
       uio                    24576  1 uio_pdrv_genirq
       sch_fq_codel           20480  3
-      ip_tables              32768  0
-      x_tables               40960  1 ip_tables
+      ip_tables              32768  2 iptable_filter,iptable_nat
+      x_tables               40960  4 xt_conntrack,iptable_filter,ip_tables,xt_MASQUERADE
            
 **filemanager-http**
 
@@ -152,37 +158,37 @@ You can configure your WAN interface as a DHCP, fixed IP or according to your se
       
  
  * File content
- 
-      # interfaces(5) file used by ifup(8) and ifdown(8)
-      auto lo
-      iface lo inet loopback
+        
+            # interfaces(5) file used by ifup(8) and ifdown(8)
+            auto lo
+            iface lo inet loopback
 
-      auto eth0
-      #allow-hotplug eth0
-      iface eth0 inet dhcp
+            auto eth0
+            #allow-hotplug eth0
+            iface eth0 inet dhcp
 
-      #allow-hotplug eth1
-      #iface eth1 inet dhcp
-      auto eth1
-      iface eth1 inet static
-      address 192.168.1.1
-      netmask 255.255.255.0
-      broadcast 255.255.1.255    
-      #gateway 192.168.1.1
-      dns-nameservers 8.8.8.8 8.8.4.4
+            #allow-hotplug eth1
+            #iface eth1 inet dhcp
+            auto eth1
+            iface eth1 inet static
+            address 192.168.1.1
+            netmask 255.255.255.0
+            broadcast 255.255.1.255    
+            #gateway 192.168.1.1
+            dns-nameservers 8.8.8.8 8.8.4.4
 
-      #allow-hotplug wlan0
-      #iface wlan0 inet dhcp
-      #	wpa-ssid "foxy"
-      #	wpa-psk "1234567890"
-      #address 192.168.254.55
-      #netmask 255.255.0.0
-      #gateway 192.168.254.254
-      #dns-nameservers 8.8.8.8 8.8.4.4
-      ####wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-      # Disable power saving on compatible chipsets (prevents SSH/connection dropouts over WiFi)
-      #wireless-mode Managed
-      #wireless-power off
+            #allow-hotplug wlan0
+            #iface wlan0 inet dhcp
+            #	wpa-ssid "foxy"
+            #	wpa-psk "1234567890"
+            #address 192.168.254.55
+            #netmask 255.255.0.0
+            #gateway 192.168.254.254
+            #dns-nameservers 8.8.8.8 8.8.4.4
+            ####wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+            # Disable power saving on compatible chipsets (prevents SSH/connection dropouts over WiFi)
+            #wireless-mode Managed
+            #wireless-power off
 
 **Client connection (DHCP)**
 
@@ -223,20 +229,20 @@ Kernel has support for leds so we can control the available leds on the board.
 
     sudo su
     cd /sys/class/leds/
-    oot@nanopi-r2s:/sys/class/leds# ls
+    root@nanopi-r2s:/sys/class/leds# ls
     lan_led  status_led  wan_led
 
 
-The available options are:
+**The available options are:**
 
       [none] rc-feedback rfkill-any rfkill-none kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock mmc0 timer oneshot heartbeat gpio cpu cpu0 cpu1 cpu2 cpu3 default-on panic 
 
 
-To turn on the wan_led
+* To turn on the wan_led
 
     echo "default-on" > /sys/class/leds/wan_led/trigger 
 
-To turn off the wan_led
+* To turn off the wan_led
 
     echo "none" > /sys/class/leds/wan_led/trigger 
     
