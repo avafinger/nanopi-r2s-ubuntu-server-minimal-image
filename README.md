@@ -4,6 +4,15 @@ Ubuntu 19.10 Server for NanoPi R2S
 
 This is the base Image for a small router, based on Kernel 5.4.25 and up for the NanoPi R2S
 
+Release with Kernel version:
+
+* v0.1 - Kernel 5.4.25
+
+* v0.2 - Kernel 5.4.27
+
+* v0.3 - Kernel 5.4.28
+
+
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
 * i2c0 
@@ -78,9 +87,8 @@ rtl8xxxu should be enough, added rtl8821cu for the sake of compatibility.
       [48274.537632] usbcore: registered new interface driver rtl8192cu
       [48274.625790] usbcore: registered new interface driver rtl8xxxu
       [48274.654369] rtl8192cu 2-1:1.0 wlx7cdd902fdefa: renamed from wlan0
-      
- 
-  
+
+* Modules
       
       Module                  Size  Used by
       8821cu               2035712  0
@@ -137,13 +145,15 @@ just run :
 **Configuring WAN (eth0)**
 
 You can configure your WAN interface as a DHCP, fixed IP or according to your service provider. Edit the file /etc/network/interfaces and change the eth0 configuration as desired, in my case i have DHCP (default):
-      
+
+* Edit the file:
+
       sudo jed /etc/network/interfaces      
       
  
+ * File content
  
-       
-       # interfaces(5) file used by ifup(8) and ifdown(8)
+      # interfaces(5) file used by ifup(8) and ifdown(8)
       auto lo
       iface lo inet loopback
 
@@ -180,16 +190,20 @@ A Linux desktop connected to the LAN interface of our mini router to surf the in
 
 ![File manager](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/client-1.png)
 
+* v0.3 - Mini Router NanoPi R2S with eth led-monitor
+
+Kernel updated to 5.4.28 with ethernet led monitoring to display the eth status for the WAN and LAN interface.
 
 # Latest Kernel - NanoPi R2S mini router - Ubuntu 19.10
 
-Linux nanopi-r2s 5.4.27 #1 SMP PREEMPT Sat Mar 21 12:59:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+Linux nanopi-r2s 5.4.28 #1 SMP PREEMPT Fri Mar 27 20:48:32 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 
 # Status
 
 * eth0 (ok)
 * eth1 (ok)
 * DVFS (seems ok)
+* eth link status monitoring (ok?)
 
 # Cpu / Kernel Health
 
@@ -235,6 +249,8 @@ We can now move on and install a service to show the status of our WAN and LAN i
 * add support for rtl8821cu usb (v0.2)
 * add Kernel 5.4.27 (v0.2)
 * add NanoPi R2S mini router (v0.2)
+* add Kernel 5.4.28 (v0.3)
+* add NanoPi R2S mini router with eth-monitor (v0.3)
 
 # BootLog
 
