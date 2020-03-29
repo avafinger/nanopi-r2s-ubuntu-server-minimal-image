@@ -198,7 +198,15 @@ A Linux desktop connected to the LAN interface of our mini router to surf the in
 
 * v0.3 - Mini Router NanoPi R2S with eth led-monitor
 
-Kernel updated to 5.4.28 with ethernet led monitoring to display the eth status for the WAN and LAN interface.
+Kernel updated to 5.4.28 with eth-monitor to display the eth status for the WAN and LAN interface.
+When the WAN is up, the WAN led will be ON, when down, WAN led will be OFF.
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.3
+
+
+**Boot behaviour**
+
+When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
 
 # Latest Kernel - NanoPi R2S mini router - Ubuntu 19.10
 
