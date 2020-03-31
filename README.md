@@ -256,6 +256,15 @@ Kernel has support for leds so we can control the available leds on the board.
     
 We can now move on and install a service to show the status of our WAN and LAN interfaces turning the wan_led and lan_led ON and OFF.
 
+# htop 2.2.2
+
+Monitor the health of NanoPi R2S with htop.
+
+* Install
+
+        sudo dpkg -i htop_2.2.2-1_arm64.deb 
+
+![NanoPi R2S htop](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/NanoPi-R2S.png)
 
 # ChangeLog
 
