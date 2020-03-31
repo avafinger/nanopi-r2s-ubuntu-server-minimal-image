@@ -262,6 +262,7 @@ Monitor the health of NanoPi R2S with htop.
 
 * Install
 
+        wget https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/htop_2.2.2-1_arm64.deb
         sudo dpkg -i htop_2.2.2-1_arm64.deb 
 
 ![NanoPi R2S htop](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/NanoPi-R2S.png)
