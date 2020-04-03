@@ -12,6 +12,8 @@ Release with Kernel version:
 
 * v0.3 - Kernel 5.4.28
 
+* v0.4 - Kernel 5.6.2
+
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -210,7 +212,7 @@ When you turn ON the board, the 3 leds will go ON for a few seconds and later WA
 
 # Latest Kernel - NanoPi R2S mini router - Ubuntu 19.10
 
-Linux nanopi-r2s 5.4.28 #1 SMP PREEMPT Fri Mar 27 20:48:32 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+Linux nanopi-r2s 5.6.1 #2 SMP PREEMPT Thu Apr 2 19:50:55 -03 2020 aarch64 aarch64 aarch64 GNU/Linux
 
 # Status
 
@@ -275,6 +277,7 @@ Monitor the health of NanoPi R2S with htop.
 * add NanoPi R2S mini router (v0.2)
 * add Kernel 5.4.28 (v0.3)
 * add NanoPi R2S mini router with eth-monitor (v0.3)
+* add Kernel 5.6.2 (v0.4)
 
 # BootLog
 
