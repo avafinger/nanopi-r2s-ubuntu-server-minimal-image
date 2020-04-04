@@ -269,6 +269,43 @@ Monitor the health of NanoPi R2S with htop.
 
 ![NanoPi R2S htop](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/NanoPi-R2S.png)
 
+# Testing USB Realtek 8152
+
+I did a simple test to check if the USB Realtek RTL8152-B is working at Gb speed and compared to my PCI Gb in my linux box.
+My internet connections is 25 Mb, so i download 1GB of data and compare both.
+
+**gigabit PCI (linux box X64)**
+
+            [    2.079301] r8169 0000:02:00.0 eth0: RTL8168c/8111c, e0:cb:4e:81:11:5a, XID 3c4, IRQ 17
+            
+ 
+
+      alex@svn:~$ wget https://speed.hetzner.de/1GB.bin
+      --2020-04-04 15:43:25--  https://speed.hetzner.de/1GB.bin
+      Resolving speed.hetzner.de (speed.hetzner.de)... 2a01:4f8:0:59ed::2, 88.198.248.254
+      Connecting to speed.hetzner.de (speed.hetzner.de)|2a01:4f8:0:59ed::2|:443... connected.
+      HTTP request sent, awaiting response... 200 OK
+      Length: 1048576000 (1000M) [application/octet-stream]
+      Saving to: ‘1GB.bin.1’
+
+      1GB.bin.1             5%[>                   ]  50,87M  2,71MB/s    eta 8m 2s  ^C
+
+**gigabit USB (NanoPi R2S eth1 = LAN)**
+
+            [   11.032460] r8152 5-1:1.0 (unnamed net_device) (uninitialized): Random ether addr 4e:86:d7:06:7f:9d
+
+ 
+
+      ubuntu@nanopi-r2s:~$ wget https://speed.hetzner.de/1GB.bin
+      --2020-04-04 18:44:02--  https://speed.hetzner.de/1GB.bin
+      Resolving speed.hetzner.de (speed.hetzner.de)... 2a01:4f8:0:59ed::2, 88.198.248.254
+      Connecting to speed.hetzner.de (speed.hetzner.de)|2a01:4f8:0:59ed::2|:443... connected.
+      HTTP request sent, awaiting response... 200 OK
+      Length: 1048576000 (1000M) [application/octet-stream]
+      Saving to: ‘1GB.bin.1’
+
+      1GB.bin.1             5%[>                   ]  50.91M  2.70MB/s    eta 8m 11s ^C
+
 # ChangeLog
 
 * add Kernel 5.4.25 (initial commit)
