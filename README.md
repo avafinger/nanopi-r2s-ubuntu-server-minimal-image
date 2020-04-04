@@ -198,12 +198,26 @@ A Linux desktop connected to the LAN interface of our mini router to surf the in
 
 ![File manager](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/client-1.png)
 
-* v0.3 - Mini Router NanoPi R2S with eth led-monitor
+* v0.3 - Mini Router NanoPi R2S with eth-monitor
 
 Kernel updated to 5.4.28 with eth-monitor to display the eth status for the WAN and LAN interface.
 When the WAN is up, the WAN led will be ON, when down, WAN led will be OFF.
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.3
+
+* v0.4  - Mini Router NanoPi R2S with eth-monitor
+
+Kernel updated to 5.6.2 with eth-monitor to display the eth status for the WAN and LAN interface.
+If WAN is up, the WAN led is ON, if down, WAN led is OFF. Same for the LAN interface.
+
+eth-monitor runs as service. You can stop, start or see the status of the service.
+
+      sudo systemctl status eth-monitor.service
+      sudo systemctl stop eth-monitor.service
+      sudo systemctl start eth-monitor.service
+      
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.4
 
 
 **Boot behaviour**
@@ -278,7 +292,7 @@ My internet connections is 25 Mb, so i download 1GB of data and compare both.
 
             [    2.079301] r8169 0000:02:00.0 eth0: RTL8168c/8111c, e0:cb:4e:81:11:5a, XID 3c4, IRQ 17
             
- 
+ *
 
       alex@svn:~$ wget https://speed.hetzner.de/1GB.bin
       --2020-04-04 15:43:25--  https://speed.hetzner.de/1GB.bin
@@ -294,7 +308,7 @@ My internet connections is 25 Mb, so i download 1GB of data and compare both.
 
             [   11.032460] r8152 5-1:1.0 (unnamed net_device) (uninitialized): Random ether addr 4e:86:d7:06:7f:9d
 
- 
+* 
 
       ubuntu@nanopi-r2s:~$ wget https://speed.hetzner.de/1GB.bin
       --2020-04-04 18:44:02--  https://speed.hetzner.de/1GB.bin
