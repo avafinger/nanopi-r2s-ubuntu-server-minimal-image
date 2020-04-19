@@ -229,6 +229,11 @@ In my experiments, the routing and forwarding  is 8x slower than using the Gigab
 
 Add Initial support for rtl8822bu with Ubuntu Focal, the smallest Image size i could get, just for evaluation on RK3328 boards.
 
+**Ubuntu Focal 20.04 LTS Server**
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.5
+
+
 **Boot behaviour**
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
