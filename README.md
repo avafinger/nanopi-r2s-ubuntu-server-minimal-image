@@ -16,6 +16,7 @@ Release with Kernel version:
 
 * v0.5 - Kernel 5.6.5
 
+* v0.5f - fix root owner (/) on Ubuntu 20.04 LTS
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -232,6 +233,13 @@ Add Initial support for rtl8822bu with Ubuntu Focal, the smallest Image size i c
 **Ubuntu Focal 20.04 LTS Server**
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.5
+
+
+* v0.5f
+
+ Fix root owner:
+ 
+    sudo chown root:root /
 
 
 **Boot behaviour**
