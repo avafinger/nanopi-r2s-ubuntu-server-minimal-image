@@ -18,6 +18,8 @@ Release with Kernel version:
 
 * v0.5f - fix root owner (/) on Ubuntu 20.04 LTS
 
+* v0.6 - Kernel 5.6.7 - Ubuntu 20.04 LTS Server
+
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
 * i2c0 
@@ -235,12 +237,16 @@ Add Initial support for rtl8822bu with Ubuntu Focal, the smallest Image size i c
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.5
 
 
-* v0.5f
+* v0.5f - Fix
 
  Fix root owner:
  
     sudo chown root:root /
 
+
+* v0.6 - Ubuntu 20.04 LTS Server with Kernel 5.6.7
+
+Ubuntu 20.04 LTS Server with kernel update and minor fix.
 
 **Boot behaviour**
 
@@ -254,8 +260,8 @@ Linux nanopi-r2s 5.6.1 #2 SMP PREEMPT Thu Apr 2 19:50:55 -03 2020 aarch64 aarch6
 
 * eth0 (ok)
 * eth1 (ok)
-* DVFS (seems ok)
-* eth link status monitoring (ok?)
+* DVFS (ok)
+* eth link status monitoring (ok)
 
 # Cpu / Kernel Health
 
