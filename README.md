@@ -356,6 +356,80 @@ My internet connections is 25 Mb, so i download 1GB of data and compare both.
 
       1GB.bin.1             5%[>                   ]  50.91M  2.70MB/s    eta 8m 11s ^C
 
+# Reading gpio-keys button
+
+There is a button available called reset button and can be red as an event with mainline kernel.
+You can check the status of the button like this:
+
+      ubuntu@nanopi-r2s:~$ sudo evtest
+      No device specified, trying to scan all of /dev/input/event*
+      Available devices:
+      /dev/input/event0:	rk805 pwrkey
+      /dev/input/event1:	gpio-keys
+      Select the device event number [0-1]: 1
+      Input driver version is 1.0.1
+      Input device ID: bus 0x19 vendor 0x1 product 0x1 version 0x100
+      Input device name: "gpio-keys"
+      Supported events:
+        Event type 0 (EV_SYN)
+        Event type 1 (EV_KEY)
+          Event code 257 (BTN_1)
+      Key repeat handling:
+        Repeat type 20 (EV_REP)
+          Repeat code 0 (REP_DELAY)
+            Value    250
+          Repeat code 1 (REP_PERIOD)
+            Value     33
+      Properties:
+      Testing ... (interrupt to exit)
+      Event: time 1587947451.537380, type 1 (EV_KEY), code 257 (BTN_1), value 1
+      Event: time 1587947451.537380, -------------- SYN_REPORT ------------
+      Event: time 1587947451.793277, type 1 (EV_KEY), code 257 (BTN_1), value 2
+      Event: time 1587947451.793277, -------------- SYN_REPORT ------------
+      Event: time 1587947451.793277, type 1 (EV_KEY), code 257 (BTN_1), value 0
+      Event: time 1587947451.793277, -------------- SYN_REPORT ------------
+      Event: time 1587947465.053375, type 1 (EV_KEY), code 257 (BTN_1), value 1
+      Event: time 1587947465.053375, -------------- SYN_REPORT ------------
+      Event: time 1587947465.309248, type 1 (EV_KEY), code 257 (BTN_1), value 2
+      Event: time 1587947465.309248, -------------- SYN_REPORT ------------
+      Event: time 1587947465.349248, type 1 (EV_KEY), code 257 (BTN_1), value 2
+      Event: time 1587947465.349248, -------------- SYN_REPORT ------------
+      Event: time 1587947465.389243, type 1 (EV_KEY), code 257 (BTN_1), value 2
+      Event: time 1587947465.389243, -------------- SYN_REPORT ------------
+      Event: time 1587947465.389243, type 1 (EV_KEY), code 257 (BTN_1), value 0
+      Event: time 1587947465.389243, -------------- SYN_REPORT ------------
+
+Or check if it is working like this:
+
+      ubuntu@nanopi-r2s:~$ sudo cat /dev/input/event1|hexdump
+      0000000 2751 5ea6 0000 0000 f482 0007 0000 0000
+      0000010 0001 0101 0001 0000 2751 5ea6 0000 0000
+      0000020 f482 0007 0000 0000 0000 0000 0000 0000
+      0000030 2751 5ea6 0000 0000 bd51 000b 0000 0000
+      0000040 0001 0101 0000 0000 2751 5ea6 0000 0000
+      0000050 bd51 000b 0000 0000 0000 0000 0000 0000
+      0000060 2756 5ea6 0000 0000 8e6a 000b 0000 0000
+      0000070 0001 0101 0001 0000 2756 5ea6 0000 0000
+      0000080 8e6a 000b 0000 0000 0000 0000 0000 0000
+      0000090 2757 5ea6 0000 0000 33c5 0000 0000 0000
+      00000a0 0001 0101 0002 0000 2757 5ea6 0000 0000
+      00000b0 33c5 0000 0000 0000 0000 0000 0001 0000
+      00000c0 2757 5ea6 0000 0000 d000 0000 0000 0000
+      00000d0 0001 0101 0002 0000 2757 5ea6 0000 0000
+      00000e0 d000 0000 0000 0000 0000 0000 0001 0000
+      00000f0 2757 5ea6 0000 0000 6c3f 0001 0000 0000
+      0000100 0001 0101 0002 0000 2757 5ea6 0000 0000
+      0000110 6c3f 0001 0000 0000 0000 0000 0001 0000
+      0000120 2757 5ea6 0000 0000 6c3f 0001 0000 0000
+      0000130 0001 0101 0000 0000 2757 5ea6 0000 0000
+      0000140 6c3f 0001 0000 0000 0000 0000 0000 0000
+      0000150 2757 5ea6 0000 0000 e614 000c 0000 0000
+      0000160 0001 0101 0001 0000 2757 5ea6 0000 0000
+      0000170 e614 000c 0000 0000 0000 0000 0000 0000
+      0000180 2758 5ea6 0000 0000 ef85 0000 0000 0000
+      0000190 0001 0101 0000 0000 2758 5ea6 0000 0000
+      00001a0 ef85 0000 0000 0000 0000 0000 0000 0000
+
 # ChangeLog
 
 * add Kernel 5.4.25 (initial commit)
