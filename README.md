@@ -260,8 +260,10 @@ Ubuntu 20.04 LTS Server with kernel update and minor fix.
 
 ## v0.7k - Kernel 5.6.7
 
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.7k
 
-**Boot behaviour**
+
+## Boot
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
 
