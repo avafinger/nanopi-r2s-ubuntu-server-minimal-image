@@ -6,7 +6,7 @@ This is the base Image for a small router, based on Kernel 5.4.25 and up for the
 
 Release with Kernel version:
 
-* v0.1 - Kernel 5.4.25
+* [v0.1 - Kernel 5.4.25](#v01---ubuntu-1910-server-nanopi-r2s)
 
 * v0.2 - Kernel 5.4.27
 
@@ -18,11 +18,13 @@ Release with Kernel version:
 
 * v0.5f - fix root owner (/) on Ubuntu 20.04 LTS
 
-* v0.6 - Kernel 5.6.7 - Ubuntu 20.04 LTS Server
+* [v0.6 - Kernel 5.6.7 - Ubuntu 20.04 LTS Server](#v06---kernel-567---ubuntu-2004-lts-server)
 
 * v0.6k - Kernel 5.6.7
 
 * v0.7k - Kernel 5.7.0-rc3
+
+* [v0.7i - Kernel 5.7.0-rc3 Image](v07i---kernel-570-rc3-image)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -263,6 +265,20 @@ Ubuntu 20.04 LTS Server with kernel update and minor fix.
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.7k
 
 
+## v0.7i - Kernel 5.7.0-rc3 Image
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.7i
+
+* Burn SD Card with etcher or **Win32DiskImager**
+* Use **7z** to unzip
+* boot with this Img and login with: **ubuntu** / **ubuntu**
+* resize rootfs manually or try **resize_rootfs.sh** to reclaim all space in the sd card
+  after login, issue the command in the shell:
+  
+      sudo chmod +x resize_rootfs.sh
+      sudo ./resize_rootfs.sh
+
+
 ## Boot
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
@@ -450,6 +466,7 @@ Or check if it is working like this:
 * add Kernel 5.6.7 and some fix (v0.6k and v0.6)
 * add Ubuntu 20.04 LTS Focal Fossa
 * add Kernel 5.7.0-rc3
+* add Kernel 5.7.0-rc3 (2GB Image)
 
 ## BootLog
 
