@@ -14,7 +14,7 @@ Release with Kernel version:
 
 * v0.4 - Kernel 5.6.2
 
-* v0.5 - Kernel 5.6.5
+* [v0.5 - Kernel 5.6.5](#v05---ubuntu-2004-lts-server-with-kernel-565-experimental)
 
 * v0.5f - fix root owner (/) on Ubuntu 20.04 LTS
 
@@ -24,7 +24,7 @@ Release with Kernel version:
 
 * v0.7k - Kernel 5.7.0-rc3
 
-* [v0.7i - Kernel 5.7.0-rc3 Image](v07i---kernel-570-rc3-image)
+* [v0.7i - Kernel 5.7.0-rc3 Image](#v07i---kernel-570-rc3-image)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
