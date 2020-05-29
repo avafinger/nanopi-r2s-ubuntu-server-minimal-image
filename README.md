@@ -26,6 +26,8 @@ Release with Kernel version:
 
 * [v0.7i - Kernel 5.7.0-rc3 Image](#v07i---kernel-570-rc3-image)
 
+* [v0.7s - Boost to 1.5 GHz](#v07s---boost-to-15-GHz)
+
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
 * i2c0 
@@ -277,6 +279,14 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
   
       sudo chmod +x resize_rootfs.sh
       sudo ./resize_rootfs.sh
+
+
+## v0.7s - Boost to 1.5 GHz
+
+It is safe to boost the NanoPi R2S to 1.5 GHz.
+
+**Instructions:**
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.7s
 
 
 ## Boot
