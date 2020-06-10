@@ -1,7 +1,7 @@
 # Nanopi-r2s-ubuntu-server-minimal-image
 
 Ubuntu 19.10 Server for NanoPi R2S
-Ubuntu 20.04 LTS for NanoPi R2S
+Ubuntu 20.04 LTS for NanoPi R2S Mainline Kernel 5.7.y
 
 This is the base Image for a small router, based on Kernel 5.4.25 and up for the NanoPi R2S
 
@@ -29,7 +29,9 @@ Release with Kernel version:
 
 * [v0.7s - Boost to 1.5 GHz](#v07s---boost-to-15-GHz)
 
-* [v0.8 - Kernel 5.7.0 Image](#v08---kernel-570-image)
+* [v0.8 - Kernel 5.7.0 Image](#v08---mainline-kernel-570-image)
+
+* [v0.9 - Kernel 5.7.1 Image](#v09---stable-kernel-571-image)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -292,11 +294,12 @@ It is safe to boost the NanoPi R2S to 1.5 GHz.
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.7s
 
 
-## v0.8 - Mainlien Stable Kernel 5.7.0
+## v0.8 - Mainline Kernel 5.7.0
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.8
 
 * **Update to Mainline Kernel 5.7.0** Instructions
+
 
       alex@svn:~/Downloads/arm/temp/linux-image-r2s$ssh ubuntu@192.168.254.28
       ubuntu@192.168.254.28's password: 
@@ -374,58 +377,95 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 
 * Benchmarking NanoPi R2S (Ubuntu 20.04 LTS)
 
-      ubuntu@nanopi-r2s:~$ 7z b
 
-      7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
-      p7zip Version 16.02 (locale=C.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs LE)
+	      ubuntu@nanopi-r2s:~$ 7z b
 
-      LE
-      CPU Freq: - - - - - - - - -
+	      7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+	      p7zip Version 16.02 (locale=C.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs LE)
 
-      RAM size:     981 MB,  # CPU hardware threads:   4
-      RAM usage:    882 MB,  # Benchmark threads:      4
+	      LE
+	      CPU Freq: - - - - - - - - -
 
-                             Compressing  |                  Decompressing
-      Dict     Speed Usage    R/U Rating  |      Speed Usage    R/U Rating
-               KiB/s     %   MIPS   MIPS  |      KiB/s     %   MIPS   MIPS
+	      RAM size:     981 MB,  # CPU hardware threads:   4
+	      RAM usage:    882 MB,  # Benchmark threads:      4
 
-      22:       1756   335    511   1708  |      52699   399   1126   4496
-      23:       1704   346    503   1736  |      50621   399   1098   4380
-      24:       1681   357    506   1808  |      48775   398   1075   4282
-      25:       1554   357    497   1775  |      46682   398   1043   4155
-      ----------------------------------  | ------------------------------
-      Avr:             349    504   1757  |              399   1086   4328
-      Tot:             374    795   3043
-      ubuntu@nanopi-r2s:~$ openssl speed -elapsed -evp aes-128-gcm aes-128-cbc sha256
-      You have chosen to measure elapsed time instead of user CPU time.
-      Doing sha256 for 3s on 16 size blocks: 9157906 sha256's in 3.00s
-      Doing sha256 for 3s on 64 size blocks: 7005608 sha256's in 3.00s
-      Doing sha256 for 3s on 256 size blocks: 4197370 sha256's in 3.00s
-      Doing sha256 for 3s on 1024 size blocks: 1604346 sha256's in 3.00s
-      Doing sha256 for 3s on 8192 size blocks: 238620 sha256's in 3.00s
-      Doing sha256 for 3s on 16384 size blocks: 120819 sha256's in 3.00s
-      Doing aes-128 cbc for 3s on 16 size blocks: 10272884 aes-128 cbc's in 3.00s
-      Doing aes-128 cbc for 3s on 64 size blocks: 2789016 aes-128 cbc's in 3.00s
-      Doing aes-128 cbc for 3s on 256 size blocks: 717614 aes-128 cbc's in 3.00s
-      Doing aes-128 cbc for 3s on 1024 size blocks: 180497 aes-128 cbc's in 3.00s
-      Doing aes-128 cbc for 3s on 8192 size blocks: 22631 aes-128 cbc's in 3.00s
-      Doing aes-128 cbc for 3s on 16384 size blocks: 11311 aes-128 cbc's in 3.00s
-      Doing aes-128-gcm for 3s on 16 size blocks: 15047618 aes-128-gcm's in 3.00s
-      Doing aes-128-gcm for 3s on 64 size blocks: 10948206 aes-128-gcm's in 3.00s
-      Doing aes-128-gcm for 3s on 256 size blocks: 5234187 aes-128-gcm's in 3.00s
-      Doing aes-128-gcm for 3s on 1024 size blocks: 1714462 aes-128-gcm's in 3.00s
-      Doing aes-128-gcm for 3s on 8192 size blocks: 233941 aes-128-gcm's in 3.00s
-      Doing aes-128-gcm for 3s on 16384 size blocks: 117441 aes-128-gcm's in 3.00s
-      OpenSSL 1.1.1f  31 Mar 2020
-      built on: Mon Apr 20 11:53:50 2020 UTC
-      options:bn(64,64) rc4(char) des(int) aes(partial) blowfish(ptr) 
-      compiler: gcc -fPIC -pthread -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -fdebug-prefix-map=/build/openssl-9j6sUa/openssl-1.1.1f=. -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
-      The 'numbers' are in 1000s of bytes per second processed.
-      type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
-      aes-128 cbc      54788.71k    59499.01k    61236.39k    61609.64k    61797.72k    61773.14k
-      aes-128-gcm      80253.96k   233561.73k   446650.62k   585203.03k   638814.89k   641384.45k
-      sha256           48842.17k   149452.97k   358175.57k   547616.77k   651591.68k   659832.83k
-      ubuntu@nanopi-r2s:~$
+				     Compressing  |                  Decompressing
+	      Dict     Speed Usage    R/U Rating  |      Speed Usage    R/U Rating
+		       KiB/s     %   MIPS   MIPS  |      KiB/s     %   MIPS   MIPS
+
+	      22:       1756   335    511   1708  |      52699   399   1126   4496
+	      23:       1704   346    503   1736  |      50621   399   1098   4380
+	      24:       1681   357    506   1808  |      48775   398   1075   4282
+	      25:       1554   357    497   1775  |      46682   398   1043   4155
+	      ----------------------------------  | ------------------------------
+	      Avr:             349    504   1757  |              399   1086   4328
+	      Tot:             374    795   3043
+	      ubuntu@nanopi-r2s:~$ openssl speed -elapsed -evp aes-128-gcm aes-128-cbc sha256
+	      You have chosen to measure elapsed time instead of user CPU time.
+	      Doing sha256 for 3s on 16 size blocks: 9157906 sha256's in 3.00s
+	      Doing sha256 for 3s on 64 size blocks: 7005608 sha256's in 3.00s
+	      Doing sha256 for 3s on 256 size blocks: 4197370 sha256's in 3.00s
+	      Doing sha256 for 3s on 1024 size blocks: 1604346 sha256's in 3.00s
+	      Doing sha256 for 3s on 8192 size blocks: 238620 sha256's in 3.00s
+	      Doing sha256 for 3s on 16384 size blocks: 120819 sha256's in 3.00s
+	      Doing aes-128 cbc for 3s on 16 size blocks: 10272884 aes-128 cbc's in 3.00s
+	      Doing aes-128 cbc for 3s on 64 size blocks: 2789016 aes-128 cbc's in 3.00s
+	      Doing aes-128 cbc for 3s on 256 size blocks: 717614 aes-128 cbc's in 3.00s
+	      Doing aes-128 cbc for 3s on 1024 size blocks: 180497 aes-128 cbc's in 3.00s
+	      Doing aes-128 cbc for 3s on 8192 size blocks: 22631 aes-128 cbc's in 3.00s
+	      Doing aes-128 cbc for 3s on 16384 size blocks: 11311 aes-128 cbc's in 3.00s
+	      Doing aes-128-gcm for 3s on 16 size blocks: 15047618 aes-128-gcm's in 3.00s
+	      Doing aes-128-gcm for 3s on 64 size blocks: 10948206 aes-128-gcm's in 3.00s
+	      Doing aes-128-gcm for 3s on 256 size blocks: 5234187 aes-128-gcm's in 3.00s
+	      Doing aes-128-gcm for 3s on 1024 size blocks: 1714462 aes-128-gcm's in 3.00s
+	      Doing aes-128-gcm for 3s on 8192 size blocks: 233941 aes-128-gcm's in 3.00s
+	      Doing aes-128-gcm for 3s on 16384 size blocks: 117441 aes-128-gcm's in 3.00s
+	      OpenSSL 1.1.1f  31 Mar 2020
+	      built on: Mon Apr 20 11:53:50 2020 UTC
+	      options:bn(64,64) rc4(char) des(int) aes(partial) blowfish(ptr) 
+	      compiler: gcc -fPIC -pthread -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -fdebug-prefix-map=/build/openssl-9j6sUa/openssl-1.1.1f=. -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+	      The 'numbers' are in 1000s of bytes per second processed.
+	      type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+	      aes-128 cbc      54788.71k    59499.01k    61236.39k    61609.64k    61797.72k    61773.14k
+	      aes-128-gcm      80253.96k   233561.73k   446650.62k   585203.03k   638814.89k   641384.45k
+	      sha256           48842.17k   149452.97k   358175.57k   547616.77k   651591.68k   659832.83k
+	      ubuntu@nanopi-r2s:~$
+
+
+## v0.9 - Stable Kernel 5.7.1
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.9
+
+
+	* **Update to Mainline Kernel 5.7.1** Instructions
+
+	ubuntu@nanopi-r2s:~$ uname -ra
+	Linux nanopi-r2s 5.7.0 #1 SMP PREEMPT Mon Jun 1 18:36:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+	ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.1_1.0-5.deb 
+	[sudo] password for ubuntu: 
+	Selecting previously unselected package linux-image-5.7.1.
+	(Reading database ... 30596 files and directories currently installed.)
+	Preparing to unpack linux-image-5.7.1_1.0-5.deb ...
+	INFO: Updating Kernel 5.7.0 to 5.7.1
+	INFO: Updating...
+	Unpacking linux-image-5.7.1 (1.0-5) ...
+	Setting up linux-image-5.7.1 (1.0-5) ...
+	OK: Kernel update success! Please reboot with: sync && sudo reboot
+	ubuntu@nanopi-r2s:~$ sync && sudo reboot
+	Connection to 192.168.254.28 closed by remote host.
+	Connection to 192.168.254.28 closed.
+	alex@svn:~$ ssh ubuntu@192.168.254.28
+	ubuntu@192.168.254.28's password: 
+	Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.1 aarch64)
+
+	 * Documentation:  https://help.ubuntu.com
+	 * Management:     https://landscape.canonical.com
+	 * Support:        https://ubuntu.com/advantage
+
+	Last login: Wed Jun 10 23:16:02 2020 from 192.168.254.253
+	ubuntu@nanopi-r2s:~$ uname -ra
+	Linux nanopi-r2s 5.7.1 #1 SMP PREEMPT Wed Jun 10 16:33:02 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+
 
 ## Boot Info
 
@@ -615,7 +655,8 @@ Or check if it is working like this:
 * add Ubuntu 20.04 LTS Focal Fossa
 * add Kernel 5.7.0-rc3
 * add Kernel 5.7.0-rc3 (2GB Image)
-* add Kernel 5.7.0 (stable kernel)
+* add Kernel 5.7.0 (mainline kernel)
+* add Kernel 5.7.1 (stable kernel)
 
 ## BootLog (Mainline Stable Kernel 5.7.0)
 
