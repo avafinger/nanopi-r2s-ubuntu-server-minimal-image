@@ -29,9 +29,9 @@ Release with Kernel version:
 
 * [v0.7s - Boost to 1.5 GHz](#v07s---boost-to-15-GHz)
 
-* [v0.8 - Kernel 5.7.0 Image](#v08---mainline-kernel-570-image)
+* [v0.8 - Kernel 5.7.0 Image](#v08---mainline-kernel-570)
 
-* [v0.9 - Kernel 5.7.1 Image](#v09---stable-kernel-571-image)
+* [v0.9 - Kernel 5.7.1 linux-image](#v09---stable-kernel-571)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -1097,5 +1097,5 @@ Or check if it is working like this:
 # Credits
 
 I would like to thank the Folks at FriendlyElec for the sample board and the work on the kernel side.
-The current Kernel version 5.7.0 release is the stable Linux Kernel with the FriendlyElec work's on USB3.
+The current Kernel version 5.7.0 release is the stable Linux Kernel with the FriendlyElec's work on USB3.
 Tha benchmark sample was taken with nanoPi R2S without case, your results may vary.
