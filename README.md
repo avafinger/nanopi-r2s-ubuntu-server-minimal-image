@@ -438,35 +438,35 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.9
 
+* **Update to Mainline Kernel 5.7.1** Instructions
 
-	* **Update to Mainline Kernel 5.7.1** Instructions
 
-	ubuntu@nanopi-r2s:~$ uname -ra
-	Linux nanopi-r2s 5.7.0 #1 SMP PREEMPT Mon Jun 1 18:36:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
-	ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.1_1.0-5.deb 
-	[sudo] password for ubuntu: 
-	Selecting previously unselected package linux-image-5.7.1.
-	(Reading database ... 30596 files and directories currently installed.)
-	Preparing to unpack linux-image-5.7.1_1.0-5.deb ...
-	INFO: Updating Kernel 5.7.0 to 5.7.1
-	INFO: Updating...
-	Unpacking linux-image-5.7.1 (1.0-5) ...
-	Setting up linux-image-5.7.1 (1.0-5) ...
-	OK: Kernel update success! Please reboot with: sync && sudo reboot
-	ubuntu@nanopi-r2s:~$ sync && sudo reboot
-	Connection to 192.168.254.28 closed by remote host.
-	Connection to 192.168.254.28 closed.
-	alex@svn:~$ ssh ubuntu@192.168.254.28
-	ubuntu@192.168.254.28's password: 
-	Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.1 aarch64)
+		ubuntu@nanopi-r2s:~$ uname -ra
+		Linux nanopi-r2s 5.7.0 #1 SMP PREEMPT Mon Jun 1 18:36:08 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+		ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.1_1.0-5.deb 
+		[sudo] password for ubuntu: 
+		Selecting previously unselected package linux-image-5.7.1.
+		(Reading database ... 30596 files and directories currently installed.)
+		Preparing to unpack linux-image-5.7.1_1.0-5.deb ...
+		INFO: Updating Kernel 5.7.0 to 5.7.1
+		INFO: Updating...
+		Unpacking linux-image-5.7.1 (1.0-5) ...
+		Setting up linux-image-5.7.1 (1.0-5) ...
+		OK: Kernel update success! Please reboot with: sync && sudo reboot
+		ubuntu@nanopi-r2s:~$ sync && sudo reboot
+		Connection to 192.168.254.28 closed by remote host.
+		Connection to 192.168.254.28 closed.
+		alex@svn:~$ ssh ubuntu@192.168.254.28
+		ubuntu@192.168.254.28's password: 
+		Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.1 aarch64)
 
-	 * Documentation:  https://help.ubuntu.com
-	 * Management:     https://landscape.canonical.com
-	 * Support:        https://ubuntu.com/advantage
+		 * Documentation:  https://help.ubuntu.com
+		 * Management:     https://landscape.canonical.com
+		 * Support:        https://ubuntu.com/advantage
 
-	Last login: Wed Jun 10 23:16:02 2020 from 192.168.254.253
-	ubuntu@nanopi-r2s:~$ uname -ra
-	Linux nanopi-r2s 5.7.1 #1 SMP PREEMPT Wed Jun 10 16:33:02 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+		Last login: Wed Jun 10 23:16:02 2020 from 192.168.254.253
+		ubuntu@nanopi-r2s:~$ uname -ra
+		Linux nanopi-r2s 5.7.1 #1 SMP PREEMPT Wed Jun 10 16:33:02 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 
 ## v0.92 - Stable Kernel 5.7.2
 
@@ -474,31 +474,31 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 
 * Update with:
 
-	ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.2_1.0-6.deb 
-	[sudo] password for ubuntu: 
-	Selecting previously unselected package linux-image-5.7.2.
-	(Reading database ... 32256 files and directories currently installed.)
-	Preparing to unpack linux-image-5.7.2_1.0-6.deb ...
-	INFO: Updating Kernel 5.7.1 to 5.7.2
-	INFO: Updating...
-	Unpacking linux-image-5.7.2 (1.0-6) ...
-	Setting up linux-image-5.7.2 (1.0-6) ...
-	OK: Kernel update success! Please reboot with: sync && sudo reboot
-	ubuntu@nanopi-r2s:~$ sync && sudo reboot
-	Connection to 192.168.254.28 closed by remote host.
-	Connection to 192.168.254.28 closed.
-	alex@svn:~/Downloads/arm/temp/linux-image-r2s$ ssh ubuntu@192.168.254.28
-	ubuntu@192.168.254.28's password: 
-	Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.2 aarch64)
+		ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.2_1.0-6.deb 
+		[sudo] password for ubuntu: 
+		Selecting previously unselected package linux-image-5.7.2.
+		(Reading database ... 32256 files and directories currently installed.)
+		Preparing to unpack linux-image-5.7.2_1.0-6.deb ...
+		INFO: Updating Kernel 5.7.1 to 5.7.2
+		INFO: Updating...
+		Unpacking linux-image-5.7.2 (1.0-6) ...
+		Setting up linux-image-5.7.2 (1.0-6) ...
+		OK: Kernel update success! Please reboot with: sync && sudo reboot
+		ubuntu@nanopi-r2s:~$ sync && sudo reboot
+		Connection to 192.168.254.28 closed by remote host.
+		Connection to 192.168.254.28 closed.
+		alex@svn:~/Downloads/arm/temp/linux-image-r2s$ ssh ubuntu@192.168.254.28
+		ubuntu@192.168.254.28's password: 
+		Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.2 aarch64)
 
-	 * Documentation:  https://help.ubuntu.com
-	 * Management:     https://landscape.canonical.com
-	 * Support:        https://ubuntu.com/advantage
+		 * Documentation:  https://help.ubuntu.com
+		 * Management:     https://landscape.canonical.com
+		 * Support:        https://ubuntu.com/advantage
 
-	Last login: Thu Jun 11 22:29:48 2020 from 192.168.254.253
-	ubuntu@nanopi-r2s:~$ uname -ra
-	Linux nanopi-r2s 5.7.2 #1 SMP PREEMPT Thu Jun 11 16:07:17 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
-	ubuntu@nanopi-r2s:~$ 
+		Last login: Thu Jun 11 22:29:48 2020 from 192.168.254.253
+		ubuntu@nanopi-r2s:~$ uname -ra
+		Linux nanopi-r2s 5.7.2 #1 SMP PREEMPT Thu Jun 11 16:07:17 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+		ubuntu@nanopi-r2s:~$ 
 
 
 ## Boot Info
