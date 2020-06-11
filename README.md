@@ -438,6 +438,8 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.9
 
+**Bump to 5.7.2**
+
 * **Update to Mainline Kernel 5.7.1** Instructions
 
 
