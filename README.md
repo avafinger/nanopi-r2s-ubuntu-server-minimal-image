@@ -25,13 +25,15 @@ Release with Kernel version:
 
 * v0.7k - Kernel 5.7.0-rc3
 
-* [v0.7i - Kernel 5.7.0-rc3 Image](#v07i---kernel-570-rc3-image)
+* [v0.7i - Kernel 5.7.0-rc3 (2GB Image)](#v07i---kernel-570-rc3-image)
 
 * [v0.7s - Boost to 1.5 GHz](#v07s---boost-to-15-GHz)
 
-* [v0.8 - Kernel 5.7.0 Image](#v08---mainline-kernel-570)
+* [v0.8 - Kernel 5.7.0 linux-image](#v08---mainline-kernel-570)
 
 * [v0.9 - Kernel 5.7.1 linux-image](#v09---stable-kernel-571)
+
+* [v0.92 - Kernel 5.7.2 linux-image](#v092---stable-kernel-572)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -466,6 +468,38 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 	ubuntu@nanopi-r2s:~$ uname -ra
 	Linux nanopi-r2s 5.7.1 #1 SMP PREEMPT Wed Jun 10 16:33:02 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 
+## v0.92 - Stable Kernel 5.7.2
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.92
+
+* Update with:
+
+	ubuntu@nanopi-r2s:~$ sudo dpkg -i linux-image-5.7.2_1.0-6.deb 
+	[sudo] password for ubuntu: 
+	Selecting previously unselected package linux-image-5.7.2.
+	(Reading database ... 32256 files and directories currently installed.)
+	Preparing to unpack linux-image-5.7.2_1.0-6.deb ...
+	INFO: Updating Kernel 5.7.1 to 5.7.2
+	INFO: Updating...
+	Unpacking linux-image-5.7.2 (1.0-6) ...
+	Setting up linux-image-5.7.2 (1.0-6) ...
+	OK: Kernel update success! Please reboot with: sync && sudo reboot
+	ubuntu@nanopi-r2s:~$ sync && sudo reboot
+	Connection to 192.168.254.28 closed by remote host.
+	Connection to 192.168.254.28 closed.
+	alex@svn:~/Downloads/arm/temp/linux-image-r2s$ ssh ubuntu@192.168.254.28
+	ubuntu@192.168.254.28's password: 
+	Welcome to Ubuntu 20.04 LTS (GNU/Linux 5.7.2 aarch64)
+
+	 * Documentation:  https://help.ubuntu.com
+	 * Management:     https://landscape.canonical.com
+	 * Support:        https://ubuntu.com/advantage
+
+	Last login: Thu Jun 11 22:29:48 2020 from 192.168.254.253
+	ubuntu@nanopi-r2s:~$ uname -ra
+	Linux nanopi-r2s 5.7.2 #1 SMP PREEMPT Thu Jun 11 16:07:17 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
+	ubuntu@nanopi-r2s:~$ 
+
 
 ## Boot Info
 
@@ -657,6 +691,15 @@ Or check if it is working like this:
 * add Kernel 5.7.0-rc3 (2GB Image)
 * add Kernel 5.7.0 (mainline kernel)
 * add Kernel 5.7.1 (stable kernel)
+* add Kernel 5.7.2 (stable kernel)
+
+## TODO
+
+* add NAT rules
+* reduce boot times
+* remove unwanted services
+* Create SD CARD Image
+
 
 ## BootLog (Mainline Stable Kernel 5.7.0)
 
@@ -1098,4 +1141,4 @@ Or check if it is working like this:
 
 I would like to thank the Folks at FriendlyElec for the sample board and the work on the kernel side.
 The current Kernel version 5.7.0 release is the stable Linux Kernel with the FriendlyElec's work on USB3.
-Tha benchmark sample was taken with nanoPi R2S without case, your results may vary.
+The benchmark sample was taken with nanoPi R2S without case, your results may vary.
