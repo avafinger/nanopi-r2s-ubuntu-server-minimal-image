@@ -1,6 +1,7 @@
 # Nanopi-r2s-ubuntu-server-minimal-image
 
 Ubuntu 19.10 Server for NanoPi R2S
+
 Ubuntu 20.04 LTS for NanoPi R2S Mainline Kernel 5.7.y
 
 This is the base Image for a small router, based on Kernel 5.4.25 and up for the NanoPi R2S
@@ -502,6 +503,41 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 		Linux nanopi-r2s 5.7.2 #1 SMP PREEMPT Thu Jun 11 16:07:17 UTC 2020 aarch64 aarch64 aarch64 GNU/Linux
 		ubuntu@nanopi-r2s:~$ 
 
+* Benchmark
+
+		openssl speed -elapsed -evp aes-128-gcm aes-128-cbc sha256 rsa2048
+		You have chosen to measure elapsed time instead of user CPU time.
+		Doing sha256 for 3s on 16 size blocks: 9122873 sha256's in 3.00s
+		Doing sha256 for 3s on 64 size blocks: 7017831 sha256's in 3.00s
+		Doing sha256 for 3s on 256 size blocks: 4204660 sha256's in 3.00s
+		Doing sha256 for 3s on 1024 size blocks: 1606222 sha256's in 3.00s
+		Doing sha256 for 3s on 8192 size blocks: 238559 sha256's in 3.00s
+		Doing sha256 for 3s on 16384 size blocks: 120868 sha256's in 3.00s
+		Doing aes-128 cbc for 3s on 16 size blocks: 10255999 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 64 size blocks: 2788401 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 256 size blocks: 717431 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 1024 size blocks: 180434 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 8192 size blocks: 22623 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 16384 size blocks: 11311 aes-128 cbc's in 3.00s
+		Doing aes-128-gcm for 3s on 16 size blocks: 15163053 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 64 size blocks: 10972686 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 256 size blocks: 5234202 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 1024 size blocks: 1715158 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 8192 size blocks: 233819 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 16384 size blocks: 117411 aes-128-gcm's in 3.00s
+		Doing 2048 bits private rsa's for 10s: 1385 2048 bits private RSA's in 10.00s
+		Doing 2048 bits public rsa's for 10s: 51916 2048 bits public RSA's in 10.00s
+		OpenSSL 1.1.1f  31 Mar 2020
+		built on: Mon Apr 20 11:53:50 2020 UTC
+		options:bn(64,64) rc4(char) des(int) aes(partial) blowfish(ptr) 
+		compiler: gcc -fPIC -pthread -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -fdebug-prefix-map=/build/openssl-9j6sUa/openssl-1.1.1f=. -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+		The 'numbers' are in 1000s of bytes per second processed.
+		type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+		aes-128 cbc      54698.66k    59485.89k    61220.78k    61588.14k    61775.87k    61773.14k
+		aes-128-gcm      80869.62k   234083.97k   446651.90k   585440.60k   638481.75k   641220.61k
+		sha256           48655.32k   149713.73k   358797.65k   548257.11k   651425.11k   660100.44k
+				  sign    verify    sign/s verify/s
+		rsa 2048 bits 0.007220s 0.000193s    138.5   5191.6
 
 ## Boot Info
 
