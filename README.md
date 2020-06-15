@@ -36,6 +36,8 @@ Release with Kernel version:
 
 * [v0.92 - Kernel 5.7.2 linux-image](#v092---stable-kernel-572)
 
+* [v0.93 - Kernel 5.8.0-rc1 - Testing](#v093---kernel-580---rc1)
+
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
 * i2c0 
@@ -538,6 +540,12 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 		sha256           48655.32k   149713.73k   358797.65k   548257.11k   651425.11k   660100.44k
 				  sign    verify    sign/s verify/s
 		rsa 2048 bits 0.007220s 0.000193s    138.5   5191.6
+
+## v0.93 - Kernel 5.8.0-rc1
+
+Initial support for kernel 5.8.0 , problems ahead...
+
+Bootlog: https://gist.github.com/avafinger/5d4a65f27f856b479c5283854a556754
 
 ## Boot Info
 
