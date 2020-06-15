@@ -549,6 +549,50 @@ Bootlog: https://gist.github.com/avafinger/5d4a65f27f856b479c5283854a556754
 
 BUG fix: https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.93
 
+**Patch**
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/tytso/ext4.git/commit/?h=ext4-for-linus-5.8-rc1-2&id=7b97d868b7ab2448859668de9222b8af43f76e78
+
+	https://git.kernel.org/pub/scm/linux/kernel/git/tytso/ext4.git/diff/fs/ext4/mballoc.c?h=dev&id=811985365378df01386c3cfb7ff716e74ca376d5
+
+
+* Benchmark:
+
+		openssl speed -elapsed -evp aes-128-gcm aes-128-cbc sha256 rsa2048
+		You have chosen to measure elapsed time instead of user CPU time.
+		Doing sha256 for 3s on 16 size blocks: 9173284 sha256's in 3.00s
+		Doing sha256 for 3s on 64 size blocks: 7022912 sha256's in 3.00s
+		Doing sha256 for 3s on 256 size blocks: 4207141 sha256's in 3.00s
+		Doing sha256 for 3s on 1024 size blocks: 1606144 sha256's in 3.00s
+		Doing sha256 for 3s on 8192 size blocks: 238573 sha256's in 3.00s
+		Doing sha256 for 3s on 16384 size blocks: 119780 sha256's in 3.00s
+		Doing aes-128 cbc for 3s on 16 size blocks: 10257397 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 64 size blocks: 2788000 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 256 size blocks: 717399 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 1024 size blocks: 180442 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 8192 size blocks: 22625 aes-128 cbc's in 3.00s
+		Doing aes-128 cbc for 3s on 16384 size blocks: 11281 aes-128 cbc's in 3.00s
+		Doing aes-128-gcm for 3s on 16 size blocks: 15111849 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 64 size blocks: 10972668 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 256 size blocks: 5235309 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 1024 size blocks: 1714633 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 8192 size blocks: 233792 aes-128-gcm's in 3.00s
+		Doing aes-128-gcm for 3s on 16384 size blocks: 116256 aes-128-gcm's in 3.00s
+		Doing 2048 bits private rsa's for 10s: 1386 2048 bits private RSA's in 10.01s
+		Doing 2048 bits public rsa's for 10s: 51920 2048 bits public RSA's in 10.00s
+		OpenSSL 1.1.1f  31 Mar 2020
+		built on: Mon Apr 20 11:53:50 2020 UTC
+		options:bn(64,64) rc4(char) des(int) aes(partial) blowfish(ptr) 
+		compiler: gcc -fPIC -pthread -Wa,--noexecstack -Wall -Wa,--noexecstack -g -O2 -fdebug-prefix-map=/build/openssl-9j6sUa/openssl-1.1.1f=. -fstack-protector-strong -Wformat -Werror=format-security -DOPENSSL_TLS_SECURITY_LEVEL=2 -DOPENSSL_USE_NODELETE -DOPENSSL_PIC -DOPENSSL_CPUID_OBJ -DOPENSSL_BN_ASM_MONT -DSHA1_ASM -DSHA256_ASM -DSHA512_ASM -DKECCAK1600_ASM -DVPAES_ASM -DECP_NISTZ256_ASM -DPOLY1305_ASM -DNDEBUG -Wdate-time -D_FORTIFY_SOURCE=2
+		The 'numbers' are in 1000s of bytes per second processed.
+		type             16 bytes     64 bytes    256 bytes   1024 bytes   8192 bytes  16384 bytes
+		aes-128 cbc      54706.12k    59477.33k    61218.05k    61590.87k    61781.33k    61609.30k
+		aes-128-gcm      80596.53k   234083.58k   446746.37k   585261.40k   638408.02k   634912.77k
+		sha256           48924.18k   149822.12k   359009.37k   548230.49k   651463.34k   654158.51k
+				  sign    verify    sign/s verify/s
+		rsa 2048 bits 0.007222s 0.000193s    138.5   5192.0
+
+
 ## Boot Info
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
