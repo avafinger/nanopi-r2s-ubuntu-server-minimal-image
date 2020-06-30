@@ -38,6 +38,9 @@ Release with Kernel version:
 
 * [v0.93 - Kernel 5.8.0-rc1 - Testing](#v093---kernel-580-rc1) - Ext4 BUG fix
 
+* [v0.94 - Kernel 5.8.0-rc3 - Testing](#v094---kernel-580-rc3)
+
+
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
 * i2c0 
@@ -797,6 +800,7 @@ Or check if it is working like this:
 * add Kernel 5.7.0 (mainline kernel)
 * add Kernel 5.7.1 (stable kernel)
 * add Kernel 5.7.2 (stable kernel)
+* add Kernel 5.8.0-rc (mainline kernel rc)
 
 ## TODO
 
