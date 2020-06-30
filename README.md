@@ -600,11 +600,11 @@ BUG fix: https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/rel
 
 * Remove unwanted servicesrunning on background
 
-	sudo apt-get remove whoopsie
-	sudo apt-get remove snap
-	sudo systemctl stop apt-daily.service
-	sudo systemctl stop apt-daily-upgrade.service
-	sudo systemctl mask apt-daily.service apt-daily-upgrade.service
+		sudo apt-get remove whoopsie
+		sudo apt-get remove snap
+		sudo systemctl stop apt-daily.service
+		sudo systemctl stop apt-daily-upgrade.service
+		sudo systemctl mask apt-daily.service apt-daily-upgrade.service
 
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.94
 
