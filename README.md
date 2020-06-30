@@ -593,6 +593,19 @@ BUG fix: https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/rel
 		rsa 2048 bits 0.007222s 0.000193s    138.5   5192.0
 
 
+## v0.94 - Kernel 5.8.0-rc3
+
+* Remove unwanted servicesrunning on background
+
+	sudo apt-get remove whoopsie
+	sudo apt-get remove snap
+	sudo systemctl stop apt-daily.service
+	sudo systemctl stop apt-daily-upgrade.service
+	sudo systemctl mask apt-daily.service apt-daily-upgrade.service
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.94
+
+
 ## Boot Info
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
