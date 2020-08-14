@@ -42,6 +42,8 @@ Release with Kernel version:
 
 * [v0.95 - Kernel 5.8.0](#v095---kernel-580)
 
+* [v0.96 - Kernel 5.8.1](#v096---kernel-581)
+
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -675,6 +677,16 @@ Remove old kernels like this:
 	tmpfs            98M     0   98M   0% /run/user/1000
 	ubuntu@nanopi-r2s:~$ 
 
+## v0.96 - Kernel 5.8.1
+
+Kernel 5.8.1 (mainline stable) for NanoPi R2S, Ubuntu 20.04 LTS
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.96
+
+
+![NanoPi R2S htop 2.2.2-2](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/htop_2.2.2-2.png)
+
+
 ## Boot Info
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
@@ -737,6 +749,11 @@ Monitor the health of NanoPi R2S with htop.
         sudo dpkg -i htop_2.2.2-1_arm64.deb 
 
 ![NanoPi R2S htop](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/NanoPi-R2S.png)
+
+* Source code
+
+      https://github.com/avafinger/htop_2.2.2
+
 
 ## Testing USB Realtek 8152
 
