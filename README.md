@@ -44,6 +44,8 @@ Release with Kernel version:
 
 * [v0.96 - Kernel 5.8.1](#v096---kernel-581)
 
+* [v0.97 - Kernel 5.9.0 RC1](#v097---kernel-590)
+
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -687,6 +689,23 @@ https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag
 ![NanoPi R2S htop 2.2.2-2](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/htop_2.2.2-2.png)
 
 
+## v0.97 - Kernel 5.9.0 (RC)
+
+First impression with Kernel 5.9.0-rc1 (mainline RC) for NanoPi R2S, Ubuntu 20.04 LTS.
+Currently working:
+
+* eth0
+* eth1
+* DVFS
+
+**issues**
+* no led on Eth1 interface (Link or Activities), but it's working.
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.97
+
+![NanoPi R2S htop 2.2.2-4](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/kernel_5.9.0-rc1.png)
+
+
 ## Boot Info
 
 When you turn ON the board, the 3 leds will go ON for a few seconds and later WAN and LAN leds will show the status link.
@@ -750,7 +769,7 @@ Monitor the health of NanoPi R2S with htop.
 
 ![NanoPi R2S htop](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/NanoPi-R2S.png)
 
-* Source code
+* Source code (updated)
 
       https://github.com/avafinger/htop_2.2.2
 
@@ -885,6 +904,7 @@ Or check if it is working like this:
 * add Kernel 5.7.2 (stable kernel)
 * add Kernel 5.8.0-rc (mainline kernel rc)
 * add Kernel 5.8.0 (linus mainline kernel)
+* add Kernel 5.9.0 (mainline)
 
 ## TODO
 
