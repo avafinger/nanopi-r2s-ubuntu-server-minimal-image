@@ -46,6 +46,8 @@ Release with Kernel version:
 
 * [v0.97 - Kernel 5.9.0 RC1](#v097---kernel-590)
 
+* [v0.98 - Kernel 5.9.0 RC8](#v098---kernel-590)
+
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -704,6 +706,46 @@ Currently working:
 https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.97
 
 ![NanoPi R2S htop 2.2.2-4](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/kernel_5.9.0-rc1.png)
+
+
+## v0.98 - Kernel 5.9.0 (RC8)
+
+First impression with Kernel 5.9.0-rc8 (mainline RC) for NanoPi R2S, Ubuntu 20.04 LTS.
+Currently working:
+
+* eth0
+* eth1
+* DVFS
+* pwm0 (fan)
+
+
+## Controlling FAN rotation with pwm0
+
+We are going to build a service to control the fan rotation according to the cpu temperature.
+Mainline kernel has exposed the pwm0 where we can output voltage from 2.6v to 5.0v and control the fan rotation.
+
+pwm0 is exposed as **/sys/class/pwm/pwmchip0/pwm0**
+
+	** Temp: 50000, duty: 999991, 0%
+	** Temp: 49545, duty: 999991, 0%
+	** Temp: 50000, duty: 999991, 0%
+	** Temp: 48636, duty: 999991, 0%
+	** Temp: 49545, duty: 999991, 0%
+	** Temp: 50416, duty: 999991, 0%
+	** Temp: 50416, duty: 999991, 0%
+	** Temp: 63750, duty: 491901, 75%
+	** Temp: 66923, duty: 491901, 75%
+	** Temp: 64583, duty: 491901, 75%
+	** Temp: 53750, duty: 891901, 25%
+	** Temp: 51250, duty: 991901, 5%
+	** Temp: 51666, duty: 991901, 5%
+	** Temp: 50416, duty: 999991, 0%
+	** Temp: 51250, duty: 991901, 5%
+	** Temp: 50416, duty: 999991, 0%
+	** Temp: 49090, duty: 999991, 0%
+	** Temp: 50833, duty: 999991, 0%
+	** Temp: 51250, duty: 991901, 5%
+	** Temp: 49545, duty: 999991, 0%
 
 
 ## Boot Info
