@@ -44,9 +44,11 @@ Release with Kernel version:
 
 * [v0.96 - Kernel 5.8.1](#v096---kernel-581)
 
-* [v0.97 - Kernel 5.9.0 RC1](#v097---kernel-590)
+* [v0.97 - Kernel 5.9.0 RC1](#v097---kernel-590-rc)
 
-* [v0.98 - Kernel 5.9.0 RC8](#v098---kernel-590)
+* [v0.98 - Kernel 5.9.0 RC8](#v098---kernel-590-rc8)
+
+* [pwm0 - fan rotation](#controlling-fan-rotation-with-pwm0)
 
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
