@@ -48,7 +48,7 @@ Release with Kernel version:
 
 * [v0.98 - Kernel 5.9.0 RC8](#v098---kernel-590-rc8)
 
-* [pwm0 - fan rotation](#controlling-fan-rotation-with-pwm0)
+* [pwm0 - fan speed control](#controlling-fan-speed-control-with-pwm0)
 
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
@@ -721,12 +721,17 @@ Currently working:
 * pwm0 (fan)
 
 
-## Controlling FAN rotation with pwm0
+## Controlling FAN speed control with pwm0
 
-We are going to build a service to control the fan rotation according to the cpu temperature.
-Mainline kernel has exposed the pwm0 where we can output voltage from 2.6v to 5.0v and control the fan rotation.
+We are going to build a service to control the fan speed according to the cpu temperature.
+Mainline kernel has exposed the pwm0 where we can output voltage from 2.6v to 5.0v and control the fan speed.
 
-pwm0 is exposed as **/sys/class/pwm/pwmchip0/pwm0**
+**Enabling the pwm0**
+     
+    sudo su
+    echo -n 0 > /sys/class/pwm/pwmchip0/export
+
+pwm0 is now exposed as **/sys/class/pwm/pwmchip0/pwm0**
 
 	** Temp: 50000, duty: 999991, 0%
 	** Temp: 49545, duty: 999991, 0%
@@ -748,6 +753,13 @@ pwm0 is exposed as **/sys/class/pwm/pwmchip0/pwm0**
 	** Temp: 50833, duty: 999991, 0%
 	** Temp: 51250, duty: 991901, 5%
 	** Temp: 49545, duty: 999991, 0%
+
+At start up the pwm0 pin drives 5v and make the Fan full speed.
+The service will check the CPU Temp and try to drive the speed of the Fan, so the noise is minimum, or should be.
+
+The service has been tested with good results with the snowfan that comes with NanoPi M3.
+
+![NanoPi R2S fan](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/fan-speed.jpg)
 
 
 ## Boot Info
