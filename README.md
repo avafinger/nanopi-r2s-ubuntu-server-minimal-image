@@ -754,9 +754,9 @@ pwm0 is now exposed as **/sys/class/pwm/pwmchip0/pwm0**
 	** Temp: 51250, duty: 991901, 5%
 	** Temp: 49545, duty: 999991, 0%
 
-Source code for the systemd tiny service is available here: https://github.com/avafinger/fan-speed-control
+Source code for the tiny systemd service is available here: https://github.com/avafinger/fan-speed-control
 
-At start up the pwm0 pin drives 5v and make the Fan full speed.
+At startup, the **pwm0 pin** drives 5v and make Fan full speed.
 The service will check the CPU Temp and try to drive the speed of the Fan, so the noise is minimum, or should be.
 
 The service has been tested with good results with the snowfan that comes with NanoPi M3.
