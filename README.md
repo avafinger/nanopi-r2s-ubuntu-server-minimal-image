@@ -719,6 +719,11 @@ Currently working:
 * eth1
 * DVFS
 * pwm0 (fan)
+* shutdown && reboot (fix)
+
+**Boot log**
+
+https://gist.github.com/avafinger/7f9b6ae613a2549fc834034dd4d81fd4
 
 
 ## Controlling FAN speed control with pwm0
