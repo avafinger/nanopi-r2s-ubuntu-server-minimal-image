@@ -787,7 +787,6 @@ After some testing, the **shutdown** command still not working and you need to u
 
 **issues**
 
-* eth1 freezes the board, cannot boot with eth1 connected to the LAN
 * eth0 bug (using the previous RTL driver)
 
 		Nov  1 13:22:00 nanopi-r2s kernel: [   15.906125] rk_gmac-dwmac ff540000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
@@ -823,9 +822,12 @@ After some testing, the **shutdown** command still not working and you need to u
 
 The problem seems to be the RTL eth0 driver, but the same driver works just fine on NanoPi M4.
 
-* Bootlog with eth0 and eth1 connected to the LAN
+**Bootlog with eth0 and eth1 connected to the LAN**
 
 https://gist.github.com/avafinger/9e60f1d607e3ba66f06158334b3165a0
+
+**Bootlog with eth1 connected to the LAN**
+https://gist.github.com/avafinger/80e4cbcefdc43a51c080ae1a8928498f
 
 	ubuntu@nanopi-r2s:~$ ifconfig
 	eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
