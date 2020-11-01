@@ -821,7 +821,43 @@ After some testing, the **shutdown** command still not working and you need to u
 		Nov  1 17:50:11 nanopi-r2s kernel: [15976.080915] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
 		Nov  1 17:50:11 nanopi-r2s kernel: [15976.083507] r8152 5-1:1.0 eth1: carrier on
 
+The problem seems to be the RTL eth0 driver, but the same driver works just fine on NanoPi M4.
 
+* Bootlog with eth0 and eth1 connected to the LAN
+
+https://gist.github.com/avafinger/9e60f1d607e3ba66f06158334b3165a0
+
+	ubuntu@nanopi-r2s:~$ ifconfig
+	eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+		inet 192.168.254.28  netmask 255.255.0.0  broadcast 192.168.255.255
+		inet6 2804:7f4:3580:4e5c:387a:74ff:fe7a:4334  prefixlen 64  scopeid 0x0<global>
+		inet6 fe80::387a:74ff:fe7a:4334  prefixlen 64  scopeid 0x20<link>
+		ether 3a:7a:74:7a:43:34  txqueuelen 1000  (Ethernet)
+		RX packets 596  bytes 49830 (49.8 KB)
+		RX errors 0  dropped 0  overruns 0  frame 0
+		TX packets 74  bytes 7504 (7.5 KB)
+		TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+		device interrupt 36  
+
+	eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+		inet 192.168.254.67  netmask 255.255.0.0  broadcast 192.168.255.255
+		inet6 2804:7f4:3580:4e5c:d0c2:994e:11fb:7959  prefixlen 64  scopeid 0x0<global>
+		inet6 2804:7f4:3580:4e5c:40f7:a7ff:fe28:de72  prefixlen 64  scopeid 0x0<global>
+		inet6 fe80::40f7:a7ff:fe28:de72  prefixlen 64  scopeid 0x20<link>
+		ether 42:f7:a7:28:de:72  txqueuelen 1000  (Ethernet)
+		RX packets 367  bytes 30985 (30.9 KB)
+		RX errors 0  dropped 0  overruns 0  frame 0
+		TX packets 598  bytes 104090 (104.0 KB)
+		TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+	lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+		inet 127.0.0.1  netmask 255.0.0.0
+		inet6 ::1  prefixlen 128  scopeid 0x10<host>
+		loop  txqueuelen 1000  (Local Loopback)
+		RX packets 0  bytes 0 (0.0 B)
+		RX errors 0  dropped 0  overruns 0  frame 0
+		TX packets 0  bytes 0 (0.0 B)
+		TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 
 ![NanoPi R2S htop Kernel 5.10.0-c1](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/kernel_5.10.0-rc1.png)
