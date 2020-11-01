@@ -785,6 +785,45 @@ After some testing, the **shutdown** command still not working and you need to u
 
 **sudo halt** 
 
+**issues**
+
+* eth1 freezes the board, cannot boot with eth0 connected to the LAN
+* eth0 bug (using the previous RTL driver)
+
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.906125] rk_gmac-dwmac ff540000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.906234] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.924903] BUG: spinlock bad magic on CPU#3, swapper/3/0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.925429]  lock: 0xffffff8001aa1690, .magic: 00000000, .owner: <none>/-1, .owner_cpu: 0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.926163] CPU: 3 PID: 0 Comm: swapper/3 Not tainted 5.10.0-rc1 #1
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.926722] Hardware name: FriendlyElec NanoPi R2S (DT)
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.927191] Call trace:
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.927430]  dump_backtrace+0x0/0x1e8
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.927767]  show_stack+0x2c/0x80
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.928075]  dump_stack+0xc8/0x11c
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.928386]  spin_dump+0x80/0xa0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.928680]  do_raw_spin_lock+0xf4/0x118
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.929039]  _raw_spin_lock_irqsave+0x60/0xc0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.929438]  stmmac_tx_timer+0x5c/0xc0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.929788]  call_timer_fn+0x3c/0x200
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.930126]  run_timer_softirq+0x530/0x568
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.930498]  __do_softirq+0x140/0x3fc
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.930841]  irq_exit+0xd4/0xe0
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.931134]  __handle_domain_irq+0x90/0xf8
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.931512]  efi_header_end+0xb4/0xd8
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.931847]  el1_irq+0xb8/0x180
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.932141]  cpuidle_enter_state+0xbc/0x448
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.932522]  cpuidle_enter+0x3c/0x50
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.932856]  call_cpuidle+0x44/0x78
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.933183]  do_idle+0x22c/0x290
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.933486]  cpu_startup_entry+0x28/0x68
+	Nov  1 13:22:00 nanopi-r2s kernel: [   15.933854]  secondary_start_kernel+0x190/0x1e0
+	Nov  1 17:50:06 nanopi-r2s kernel: [15971.531102] rk_gmac-dwmac ff540000.ethernet eth0: Link is Down
+	Nov  1 17:50:11 nanopi-r2s kernel: [15976.080915] IPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready
+	Nov  1 17:50:11 nanopi-r2s kernel: [15976.083507] r8152 5-1:1.0 eth1: carrier on
+
+
+
+
 ![NanoPi R2S htop Kernel 5.10.0-c1](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/kernel_5.10.0-rc1.png)
 
 
