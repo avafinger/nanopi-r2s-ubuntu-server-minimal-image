@@ -787,7 +787,7 @@ After some testing, the **shutdown** command still not working and you need to u
 
 **issues**
 
-* eth1 freezes the board, cannot boot with eth0 connected to the LAN
+* eth1 freezes the board, cannot boot with eth1 connected to the LAN
 * eth0 bug (using the previous RTL driver)
 
 		Nov  1 13:22:00 nanopi-r2s kernel: [   15.906125] rk_gmac-dwmac ff540000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
