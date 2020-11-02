@@ -50,7 +50,7 @@ Release with Kernel version:
 
 * [pwm0 - fan speed control](#controlling-fan-speed-control-with-pwm0)
 
-* [v0.99 - Kernel 5.10.0 RC1 / RC2](#v099---kernel-5100-rc1-rc2)
+* [v0.99 - Kernel 5.10.0 RC1 / RC2](#v099---kernel-5100-rc1--rc2)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
