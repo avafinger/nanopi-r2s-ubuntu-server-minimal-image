@@ -50,7 +50,7 @@ Release with Kernel version:
 
 * [pwm0 - fan speed control](#controlling-fan-speed-control-with-pwm0)
 
-* [v0.99 - Kernel 5.10.0 RC1](#v099---kernel-5100-rc1)
+* [v0.99 - Kernel 5.10.0 RC1 / RC2](#v099---kernel-5100-rc1)
 
 ![NanoPi R2S](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/nanopi-r2s.jpg)
 
@@ -770,7 +770,7 @@ The service has been tested with good results with the snowfan that comes with N
 ![NanoPi R2S fan](https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/raw/master/fan-speed.jpg)
 
 
-## v0.99 - Kernel 5.10.0 (RC1)
+## v0.99 - Kernel 5.10.0 (RC1 / RC2)
 
 Testing the Kernel 5.10.0-rc1 (confirmed LTS ?) for NanoPi R2S.
 Currently working:
@@ -784,6 +784,10 @@ Currently working:
 After some testing, the **shutdown** command still not working and you need to use:
 
 **sudo halt** 
+
+**download linux-image 5.10.0-rc2**
+
+https://github.com/avafinger/nanopi-r2s-ubuntu-server-minimal-image/releases/tag/v0.99
 
 **issues**
 
